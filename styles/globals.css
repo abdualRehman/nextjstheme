@@ -105,3 +105,18 @@ body {
 .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
   bottom: 65px !important;
 }
+
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  border-radius: 100%;
+  border: 1px solid black;
+  color: black;
+  padding: 10px;
+  font-size: 18px !important;
+}
+
+.categoriesSwiper .swiper-wrapper {
+  width: 85%;
+  margin: auto;
+}

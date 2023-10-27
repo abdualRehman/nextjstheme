@@ -1,23 +1,23 @@
-import Head from 'next/head';
+import Head from "next/head";
 
 // HOC react
-import IframeHOC from '../components/IframeHOC';
+import IframeHOC from "../components/IframeHOC";
 
 // mui for backgraound
-import { Paper } from '@mui/material';
+import { Paper } from "@mui/material";
 
 // mui theme
-import { ColorContextProvider } from '../theme/MUI_MODE';
+import { ColorContextProvider } from "../theme/MUI_MODE";
 
 // components
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-import ScrollToTop from '../components/ScrollToTop';
-import '../styles/globals.css';
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import ScrollToTop from "../components/ScrollToTop";
+import "../styles/globals.css";
 
 // redux
-import { Provider } from 'react-redux';
-import Store from '../redux/store';
+import { Provider } from "react-redux";
+import Store from "../redux/store";
 
 // progressbar
 import NextNProgress from "nextjs-progressbar";
@@ -33,8 +33,16 @@ function MyApp({ Component, pageProps }) {
       <Provider store={Store}>
         <IframeHOC>
           <ColorContextProvider>
-            <Paper variant='outlined'
-              sx={{ boxShadow: 'none', borderRadius: '0', border: 'none' }}>
+            <Paper
+              variant="outlined"
+              sx={{
+                boxShadow: "none",
+                borderRadius: "0",
+                border: "none",
+                maxWidth: "1352px",
+                margin: "auto",
+              }}
+            >
               <NextNProgress
                 color="#29D"
                 startPosition={0.3}
@@ -51,7 +59,7 @@ function MyApp({ Component, pageProps }) {
         </IframeHOC>
       </Provider>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
