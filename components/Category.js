@@ -20,7 +20,7 @@ import cSlide5 from "../public/images/c-slide5.png";
 import bg from "../public/images/bg.png";
 
 // swiper
-import { Pagination, Autoplay, Navigation } from "swiper";
+import { Pagination, Autoplay, Navigation, FreeMode } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -53,69 +53,75 @@ const Category = () => {
   ];
 
   return (
-    <Box m="auto" maxWidth="1052px">
-      <Box sx={{ backgroundImage: bg, objectFit: "inherit" }}>
-        <Typography variant="h4" sx={{ color: "black", my: 5 }}>
-          Top Categories
-        </Typography>
-
-        <Swiper
-          slidesPerView={5}
-          spaceBetween={5}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          speed={5000}
-          pagination={{
-            el: ".swiper-pagination",
-            clickable: true,
-          }}
-          scrollbar={{ draggable: true }}
-          modules={[Navigation, Autoplay, Pagination]}
-          loop={true}
-          className="categoriesSwiper"
-          cssMode={true}
-          navigation
-          mousewheel={true}
-          keyboard={true}
-          style={{
-            marginTop: "20px",
-          }}
-        >
-          {content.map((item) => (
-            <SwiperSlide key={item.title}>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  width: "350px",
-                  gap: 2,
-                }}
-              >
-                <Image
-                  src={item.img}
-                  alt="banner"
-                  width={"120px"}
-                  height={"100px"}
-                />
-                <Typography
-                  variant={`${isTablet ? "h5" : "h4"}`}
-                  component="h1"
-                  fontWeight={600}
-                  mb="40px"
-                >
-                  {item.title.toLocaleUpperCase()}
-                </Typography>
-              </Box>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+    <Box sx={{ width: "100%", position: "relative", maxWidth: "1352px", margin: "auto", overflow: "hidden" }} >
+      <Box sx={{ position: 'absolute', left: "-100px", top: "-150%" }} >
+        <Image src={bg} />
       </Box>
+      <Box m="auto" maxWidth="1052px" position={'inherit'} >
+        <Box sx={{ backgroundImage: bg, objectFit: "inherit" }}>
+          <Typography variant="h4" sx={{ color: "black", my: 5 }}>
+            Top Categories
+          </Typography>
+          <Box sx={{ width: "100%", position: "relative", textAlign: "center" }} >
+            <Swiper
+              slidesPerView={5}
+              spaceBetween={40}
+              freeMode={true}
+              pagination={{
+                el: ".swiper-pagination",
+                clickable: true,
+              }}
+              scrollbar={{ draggable: true }}
+              modules={[Navigation, Autoplay, Pagination, FreeMode]}
+              loop={true}
+              className="categoriesSwiper"
+              navigation
+              mousewheel={true}
+              keyboard={true}
+              style={{
+                margin: "auto",
+                marginTop: "20px",
+                position: "initial",
+                width: "90%",
+              }}
+            >
+              {content.map((item) => (
+                <SwiperSlide key={item.title}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      width: "350px",
+                      gap: 2,
+                    }}
+                  >
+                    <Box sx={{ px: 1, py: 2, borderRadius: 1, bgcolor: "#EEEBEB" }} >
+                      <Image
+                        src={item.img}
+                        alt="banner"
+                        width={"120px"}
+                        height={"100px"}
+                      />
 
-      {/* <Box
+                    </Box>
+                    <Typography
+                      variant={`p`}
+                      component="h4"
+                      fontWeight={700}
+                      mb="40px"
+                    >
+                      {item.title.toLocaleUpperCase()}
+                    </Typography>
+                  </Box>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </Box>
+        </Box>
+
+        {/* <Box
         m="auto"
         display="flex"
         flexDirection={`${isTablet ? "column" : "row"}`}
@@ -255,6 +261,7 @@ const Category = () => {
           </Box>
         </Box>
       </Box> */}
+      </Box>
     </Box>
   );
 };

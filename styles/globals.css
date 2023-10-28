@@ -106,17 +106,41 @@ body {
   bottom: 65px !important;
 }
 
+/* .swiper-button-prev {
+  left: -30px !important;
+}
+
+.swiper-button-next {
+  right: -30px !important;
+} */
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 30px !important;
+  height: 30px !important;
+}
 
 .swiper-button-prev::after,
 .swiper-button-next::after {
   border-radius: 100%;
   border: 1px solid black;
   color: black;
-  padding: 10px;
+  /* padding: 10px; */
   font-size: 18px !important;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.categoriesSwiper .swiper-wrapper-box {
+  height: 1200px !important;
+  width: 100%;
+  background-color: blue !important;
 }
 
 .categoriesSwiper .swiper-wrapper {
-  width: 85%;
-  margin: auto;
+  width: 85% !important;
+  margin: auto !important;
 }

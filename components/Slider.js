@@ -60,7 +60,7 @@ const Slider = () => {
                         <Box sx={{
                             display: 'flex', alignItems: 'center',
                             flexDirection: `${isTablet ? 'column' : 'row'}`,
-                            justifyContent: 'center', gap: '50px', mb: '50px'
+                            justifyContent: 'center', gap: '50px', mb: '-5px'
                         }}>
                             <Box>
                                 <Image src={item.img} alt='banner' height={'570px'} />

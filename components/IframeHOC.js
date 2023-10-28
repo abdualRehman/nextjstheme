@@ -26,8 +26,8 @@ export default function IframeHOC({ children }) {
     }, [data])
 
 
-    if (loading) {
-        return <LoadingIndicator />;
-    }
+    // if (loading) {
+    //     return <LoadingIndicator />;
+    // }
     return children;
 }

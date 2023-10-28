@@ -11,13 +11,14 @@ import ShopIcon from '@mui/icons-material/Shop';
 
 // image
 import paypal from '../public/paypal.png'
+import logo from '../public/images/logo2.png';
 
 const Footer = () => {
 
     const isTablet = useMediaQuery('(max-width:900px)')
 
     return (
-        <>
+        <Box maxWidth='1352px' m='auto' sx={{ backgroundColor: "#0A6BF8", pt: 0.5, '& h3': { color: "white" } }} >
             <Box maxWidth='1152px' m='auto' p={`${isTablet ? '5px' : '10px'}`} display='flex' flexDirection={`${isTablet ? 'column' : 'row'}`}
                 justifyContent='space-between' mt='80px' pb='10px' gap={`${isTablet && '50px'}`}
             >
@@ -32,7 +33,7 @@ const Footer = () => {
                         <Typography variant="body2" component='h3' fontWeight={600}>
                             Address:
                         </Typography>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '10px' }}>
+                        <Typography variant="body2" sx={{ color: 'lightgray', pl: '10px' }}>
                             562 Wellington Road. Street32. San Francisco
                         </Typography>
                     </Box>
@@ -40,7 +41,7 @@ const Footer = () => {
                         <Typography variant="body2" component='h3' fontWeight={600}>
                             Email:
                         </Typography>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '10px' }}>
+                        <Typography variant="body2" sx={{ color: 'lightgray', pl: '10px' }}>
                             Ecommerce@example.com
                         </Typography>
                     </Box>
@@ -48,7 +49,7 @@ const Footer = () => {
                         <Typography variant="body2" component='h3' fontWeight={600}>
                             Phone:
                         </Typography>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '10px' }}>
+                        <Typography variant="body2" sx={{ color: 'lightgray', pl: '10px' }}>
                             +01 2222 345 / (+91) 01 2345 6789
                         </Typography>
                     </Box>
@@ -56,21 +57,11 @@ const Footer = () => {
                         <Typography variant="body2" component='h3' fontWeight={600}>
                             Hours:
                         </Typography>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '10px' }}>
+                        <Typography variant="body2" sx={{ color: 'lightgray', pl: '10px' }}>
                             10:00 - 18:00. Mon-Sat
                         </Typography>
                     </Box>
 
-                    <Typography variant="body2" component='h3' fontWeight={600} mt='20px' mb='10px'>
-                        Follow Us
-                    </Typography>
-
-                    <Box display='flex' gap='10px'>
-                        <FacebookIcon sx={{ cursor: 'pointer' }} />
-                        <TwitterIcon sx={{ cursor: 'pointer' }} />
-                        <InstagramIcon sx={{ cursor: 'pointer' }} />
-                        <YouTubeIcon sx={{ cursor: 'pointer' }} />
-                    </Box>
                 </Box>
 
                 {/* About &  My Account */}
@@ -80,19 +71,19 @@ const Footer = () => {
                         <Typography variant="body1" component='h3' fontWeight={600} mb='10px'>
                             About
                         </Typography>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '5px' }}>
+                        <Typography variant="body2" sx={{ color: 'lightgray', pl: '5px' }}>
                             About Us
                         </Typography>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '5px' }}>
+                        <Typography variant="body2" sx={{ color: 'lightgray', pl: '5px' }}>
                             Delivery Information
                         </Typography>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '5px' }}>
+                        <Typography variant="body2" sx={{ color: 'lightgray', pl: '5px' }}>
                             Privacy Policy
                         </Typography>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '5px' }}>
+                        <Typography variant="body2" sx={{ color: 'lightgray', pl: '5px' }}>
                             Terms & Conditions
                         </Typography>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '5px' }}>
+                        <Typography variant="body2" sx={{ color: 'lightgray', pl: '5px' }}>
                             Contact Us
                         </Typography>
                     </Box>
@@ -101,19 +92,19 @@ const Footer = () => {
                         <Typography variant="body1" component='h3' fontWeight={600} mb='10px'>
                             My Account
                         </Typography>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '5px' }}>
+                        <Typography variant="body2" sx={{ color: 'lightgray', pl: '5px' }}>
                             Sign In
                         </Typography>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '5px' }}>
+                        <Typography variant="body2" sx={{ color: 'lightgray', pl: '5px' }}>
                             View Cart
                         </Typography>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '5px' }}>
+                        <Typography variant="body2" sx={{ color: 'lightgray', pl: '5px' }}>
                             My Wishlist
                         </Typography>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '5px' }}>
+                        <Typography variant="body2" sx={{ color: 'lightgray', pl: '5px' }}>
                             Track My Order
                         </Typography>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '5px' }}>
+                        <Typography variant="body2" sx={{ color: 'lightgray', pl: '5px' }}>
                             Help
                         </Typography>
                     </Box>
@@ -126,7 +117,7 @@ const Footer = () => {
                     </Typography>
 
                     <Box display='flex' flexDirection='column' gap='7px'>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '5px' }}>
+                        <Typography variant="body2" sx={{ color: 'lightgray', pl: '5px' }}>
                             From App Store or Google Play
                         </Typography>
 
@@ -140,20 +131,17 @@ const Footer = () => {
                                 Google Play
                             </Button>
                         </Box>
-                        <Typography variant="body2" sx={{ color: 'gray', pl: '5px' }}>
-                            Secured Payment Gateways
-                        </Typography>
                         <Box>
-                            <Image src={paypal} alt='paypal' width='320px' height='80px' style={{ cursor: 'pointer' }} />
+                            <Image src={logo} width='200%' height='80px' style={{ cursor: 'pointer', margin: "auto" }} />
                         </Box>
                     </Box>
                 </Box>
 
             </Box>
-            <Typography variant="body2" textAlign='center' py='20px'>
+            <Typography variant="body2" color={"whitesmoke"} textAlign='center' py='20px'>
                 Copyright © 2022, Ecommerce With NextJs
             </Typography>
-        </>
+        </Box>
     );
 }
 

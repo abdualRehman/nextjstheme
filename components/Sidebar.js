@@ -15,7 +15,7 @@ const Sidebar = ({ products, setDynamicState }) => {
     const [value, setValue] = useState('all')
 
     useEffect(() => {
-
+        console.log(products);
         if (value === 'all') {
             setDynamicState(products)
         } else {

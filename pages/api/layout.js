@@ -2,7 +2,7 @@
 import { connect } from "../../utils/dbconfig/dbconfig";
 import SettingConfigs from "../../utils/models/configModel";
 
-connect()
+// connect()
 
 
 export default async function handler(req, res) {
