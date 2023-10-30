@@ -28,6 +28,7 @@ import "swiper/css/pagination";
 
 const Category = () => {
   const isTablet = useMediaQuery("(max-width:900px)");
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   const content = [
     {
@@ -53,28 +54,43 @@ const Category = () => {
   ];
 
   return (
-    <Box sx={{ width: "100%", position: "relative", maxWidth: "1352px", margin: "auto", overflow: "hidden" }} >
-      <Box sx={{ position: 'absolute', left: "-100px", top: "-150%" }} >
+    <Box
+      sx={{
+        width: "100%",
+        position: "relative",
+        maxWidth: "1352px",
+        margin: "auto",
+        overflow: "hidden",
+      }}
+    >
+      <Box sx={{ position: "absolute", left: "-100px", top: "-150%" }}>
         <Image src={bg} />
       </Box>
-      <Box m="auto" maxWidth="1052px" position={'inherit'} >
+      <Box
+        m="auto"
+        maxWidth="1052px"
+        position={"inherit"}
+        px={`${isTablet ? "10px" : "5px"}`}
+      >
         <Box sx={{ backgroundImage: bg, objectFit: "inherit" }}>
           <Typography variant="h4" sx={{ color: "black", my: 5 }}>
             Top Categories
           </Typography>
-          <Box sx={{ width: "100%", position: "relative", textAlign: "center" }} >
+          <Box
+            sx={{ width: "100%", position: "relative", textAlign: "center" }}
+          >
             <Swiper
-              slidesPerView={5}
+              slidesPerView={isMobile ? 1 : isTablet ? 3 : 5}
               spaceBetween={40}
-              freeMode={true}
+              freeMode={isMobile || isTablet ? false : true}
               pagination={{
                 el: ".swiper-pagination",
                 clickable: true,
               }}
               scrollbar={{ draggable: true }}
-              modules={[Navigation, Autoplay, Pagination, FreeMode]}
+              modules={[Navigation, Autoplay, FreeMode]}
               loop={true}
-              className="categoriesSwiper"
+              className="categoriesSwiper1"
               navigation
               mousewheel={true}
               keyboard={true}
@@ -97,14 +113,15 @@ const Category = () => {
                       gap: 2,
                     }}
                   >
-                    <Box sx={{ px: 1, py: 2, borderRadius: 1, bgcolor: "#EEEBEB" }} >
+                    <Box
+                      sx={{ px: 1, py: 2, borderRadius: 1, bgcolor: "#EEEBEB" }}
+                    >
                       <Image
                         src={item.img}
                         alt="banner"
                         width={"120px"}
                         height={"100px"}
                       />
-
                     </Box>
                     <Typography
                       variant={`p`}
@@ -120,147 +137,6 @@ const Category = () => {
             </Swiper>
           </Box>
         </Box>
-
-        {/* <Box
-        m="auto"
-        display="flex"
-        flexDirection={`${isTablet ? "column" : "row"}`}
-        justifyContent="center"
-      >
-        <Box
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="center"
-          gap="20px"
-          mb="20px"
-        >
-          <Box sx={{ position: "relative" }}>
-            <Image src={men} alt="men" width="380px" height="500px" />
-            <Box
-              sx={{
-                position: "absolute",
-                top: "0px",
-                bottom: "0px",
-                right: "0px",
-                left: "0px",
-                width: "100%",
-                height: "100%",
-                backgroundColor: "rgba(0, 0, 0, 0.4)",
-                display: "flex",
-                gap: "30px",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Typography variant="h6" component="h3" color="white">
-                mens clothing
-              </Typography>
-              <Link href="/products">
-                <Button variant="outlined" color="secondary">
-                  Shop Now
-                </Button>
-              </Link>
-            </Box>
-          </Box>
-          <Box sx={{ position: "relative" }}>
-            <Image src={electronics} alt="men" width="500px" height="350px" />
-            <Box
-              sx={{
-                position: "absolute",
-                top: "0px",
-                bottom: "0px",
-                right: "0px",
-                left: "0px",
-                width: "100%",
-                height: "100%",
-                backgroundColor: "rgba(0, 0, 0, 0.4)",
-                display: "flex",
-                gap: "30px",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Typography variant="h6" component="h3" color="white">
-                electronics
-              </Typography>
-              <Link href="/products">
-                <Button variant="outlined" color="secondary">
-                  Shop Now
-                </Button>
-              </Link>
-            </Box>
-          </Box>
-        </Box>
-        <Box
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="center"
-          gap="20px"
-        >
-          <Box sx={{ position: "relative" }}>
-            <Image src={women} alt="men" width="500px" height="350px" />
-            <Box
-              sx={{
-                position: "absolute",
-                top: "0px",
-                bottom: "0px",
-                right: "0px",
-                left: "0px",
-                width: "100%",
-                height: "100%",
-                backgroundColor: "rgba(0, 0, 0, 0.4)",
-                display: "flex",
-                gap: "30px",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Typography variant="h6" component="h3" color="white">
-                womens clothing
-              </Typography>
-              <Link href="/products">
-                <Button variant="outlined" color="secondary">
-                  Shop Now
-                </Button>
-              </Link>
-            </Box>
-          </Box>
-          <Box sx={{ position: "relative" }}>
-            <Image src={jewelery} alt="men" width="400px" height="500px" />
-            <Box
-              sx={{
-                position: "absolute",
-                top: "0px",
-                bottom: "0px",
-                right: "0px",
-                left: "0px",
-                width: "100%",
-                height: "100%",
-                backgroundColor: "rgba(0, 0, 0, 0.4)",
-                display: "flex",
-                gap: "30px",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Typography variant="h6" component="h3" color="white">
-                jewelery
-              </Typography>
-              <Link href="/products">
-                <Button variant="outlined" color="secondary">
-                  Shop Now
-                </Button>
-              </Link>
-            </Box>
-          </Box>
-        </Box>
-      </Box> */}
       </Box>
     </Box>
   );
