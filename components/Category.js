@@ -79,6 +79,8 @@ const Category = () => {
           <Box
             sx={{ width: "100%", position: "relative", textAlign: "center" }}
           >
+
+          
             <Swiper
               slidesPerView={isMobile ? 1 : isTablet ? 3 : 5}
               spaceBetween={40}
