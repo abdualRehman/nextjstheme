@@ -201,6 +201,9 @@ const Sidebar = ({ products, setDynamicState }) => {
                         width: "100%",
                         display: "flex",
                         justifyContent: "space-between",
+                        '& .css-fwndib-MuiTypography-root': {
+                          fontSize: "14px"
+                        }
                       }}
                     />
                   );
@@ -250,6 +253,9 @@ const Sidebar = ({ products, setDynamicState }) => {
                       margin: "0px",
                       display: "flex",
                       justifyContent: "space-between",
+                      '& .css-fwndib-MuiTypography-root': {
+                        fontSize: "14px"
+                      }
                     }}
                   />
                 ))}
@@ -298,6 +304,9 @@ const Sidebar = ({ products, setDynamicState }) => {
                       margin: "0px",
                       display: "flex",
                       justifyContent: "space-between",
+                      '& .css-fwndib-MuiTypography-root': {
+                        fontSize: "14px"
+                      }
                     }}
                   />
                 ))}
@@ -346,6 +355,9 @@ const Sidebar = ({ products, setDynamicState }) => {
                       margin: "0px",
                       display: "flex",
                       justifyContent: "space-between",
+                      '& .css-fwndib-MuiTypography-root': {
+                        fontSize: "14px"
+                      }
                     }}
                   />
                 ))}
@@ -389,34 +401,54 @@ const Sidebar = ({ products, setDynamicState }) => {
                 control={<Radio />}
                 labelPlacement={"start"}
                 label="All"
-                sx={{ display: "flex", justifyContent: "space-between" }}
+                sx={{
+                  display: "flex", justifyContent: "space-between", '& .css-fwndib-MuiTypography-root': {
+                    fontSize: "14px"
+                  }
+                }}
               />
               <FormControlLabel
                 value="men's clothing"
                 labelPlacement={"start"}
                 control={<Radio />}
-                sx={{ display: "flex", justifyContent: "space-between" }}
+                sx={{
+                  display: "flex", justifyContent: "space-between", '& .css-fwndib-MuiTypography-root': {
+                    fontSize: "14px"
+                  }
+                }}
                 label="Men's"
               />
               <FormControlLabel
                 value="women's clothing"
                 labelPlacement={"start"}
                 control={<Radio />}
-                sx={{ display: "flex", justifyContent: "space-between" }}
+                sx={{
+                  display: "flex", justifyContent: "space-between", '& .css-fwndib-MuiTypography-root': {
+                    fontSize: "14px"
+                  }
+                }}
                 label="Women's"
               />
               <FormControlLabel
                 value="jewelery"
                 labelPlacement={"start"}
                 control={<Radio />}
-                sx={{ display: "flex", justifyContent: "space-between" }}
+                sx={{
+                  display: "flex", justifyContent: "space-between", '& .css-fwndib-MuiTypography-root': {
+                    fontSize: "14px"
+                  }
+                }}
                 label="Jewelery"
               />
               <FormControlLabel
                 value="electronics"
                 labelPlacement={"start"}
                 control={<Radio />}
-                sx={{ display: "flex", justifyContent: "space-between" }}
+                sx={{
+                  display: "flex", justifyContent: "space-between", '& .css-fwndib-MuiTypography-root': {
+                    fontSize: "14px"
+                  }
+                }}
                 label="Electronics"
               />
             </RadioGroup>

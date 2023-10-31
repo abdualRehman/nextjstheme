@@ -11,9 +11,14 @@ import ProductCard from "../../components/ProductCard";
 import Sidebar from "../../components/Sidebar";
 // import usePagination from "@mui/material/usePagination/usePagination";
 import usePagination from "../../helpers/Pagination";
+import { content as products } from "../../dummy-data/data";
 
-const Products = ({ products }) => {
+
+
+// const Products = ({ products }) => {
+const Products = () => {
   const isTablet = useMediaQuery("(max-width:900px)");
+  
 
   const [dynamicState, setDynamicState] = useState(products);
   let [page, setPage] = useState(1);
@@ -75,13 +80,13 @@ const Products = ({ products }) => {
 
 export default Products;
 
-export const getServerSideProps = async () => {
-  const result = await axios.get("https://fakestoreapi.com/products");
-  const data = result.data;
+// export const getServerSideProps = async () => {
+//   const result = await axios.get("https://fakestoreapi.com/products");
+//   const data = result.data;
 
-  return {
-    props: {
-      products: data,
-    },
-  };
-};
+//   return {
+//     props: {
+//       products: data,
+//     },
+//   };
+// };

@@ -51,58 +51,8 @@ import { ColorModeContext } from "../theme/MUI_MODE";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import IndeterminateCheckBoxIcon from "@mui/icons-material/IndeterminateCheckBox";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { content } from "../dummy-data/data";
 
-const content = [
-  {
-    id: 1,
-    image: pSlide1,
-    title: "iphone 14 Pro",
-    category: "Mobiles",
-    price: "200.000 KWD",
-  },
-  {
-    id: 2,
-    image: pSlide2,
-    title: "iphone 15 Pro",
-    category: "Mobiles",
-    price: "200.000 KWD",
-  },
-  {
-    id: 3,
-    image: pSlide3,
-    title: "iphone 14 Plus",
-    category: "Mobiles",
-    price: "200.000 KWD",
-  },
-  {
-    id: 4,
-    image: pSlide4,
-    title: "Beats Studio Pro",
-    category: "Headsets",
-    price: "200.000 KWD",
-  },
-  {
-    id: 5,
-    image: pSlide5,
-    title: "Beats Studio Buds +",
-    category: "Headsets",
-    price: "200.000 KWD",
-  },
-  {
-    id: 6,
-    image: pSlide6,
-    title: "Beats Studio Buds Pro",
-    category: "Headsets",
-    price: "200.000 KWD",
-  },
-  {
-    id: 7,
-    image: pSlide7,
-    title: "Beats Studio Buds",
-    category: "Headsets",
-    price: "200.000 KWD",
-  },
-];
 
 const ProductSliderComponent = ({ category }) => {
   const [value, setValue] = useState(category);
@@ -272,7 +222,11 @@ const ProductSliderComponent = ({ category }) => {
             >
               {products.map((product) => (
                 <SwiperSlide key={product.id} sx={{ textAlign: "center" }}>
-                  <Card
+
+                  <ProductCard key={product.id} product={product} />
+
+
+                  {/* <Card
                     sx={{
                       margin: "auto",
                       width: isMobile ? "80%" : 230,
@@ -418,7 +372,11 @@ const ProductSliderComponent = ({ category }) => {
                         )}
                       </CardActions>
                     </CardActionArea>
-                  </Card>
+                  </Card> */}
+
+
+
+
                 </SwiperSlide>
               ))}
             </Swiper>
