@@ -144,3 +144,8 @@ body {
   width: 85% !important;
   margin: auto !important;
 }
+
+.home-banner {
+  background-image: url('../public/images/banner-bg.png');
+  background-size: 100% 100%;
+}

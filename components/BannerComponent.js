@@ -15,14 +15,12 @@ import {
   makeStyles,
   useMediaQuery,
 } from "@mui/material";
-import { styled } from "@mui/material/styles";
 
 import Link from "next/link";
 
 // images
 import cSlide1 from "../public/images/p-slide6.png";
 import cSlide2 from "../public/images/p-slide8.png";
-import bg from "../public/images/banner-bg.png";
 
 // swiper
 import { Pagination, Autoplay, Navigation, FreeMode } from "swiper";
@@ -31,22 +29,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const useStyles = styled((theme) => ({
-  root: {
-    width: "100%",
-    position: "relative",
-    maxWidth: "1352px",
-    margin: "auto",
-    overflow: "hidden",
-    my: 4,
-    backgroundColor: "blue",
-    backgroundImage: `url(${bg})`,
-  },
-}));
 const BannerComponent = () => {
-  const classes = useStyles();
 
   const isTablet = useMediaQuery("(max-width:900px)");
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   const content = [
     {
@@ -61,11 +47,14 @@ const BannerComponent = () => {
 
   return (
     <Box
-      className={classes.root}
-      style={{
-        backgroundColor: "red",
-        backgroundImage: "url(" + bg + ")",
-        backgroundSize: "auto",
+      className={"home-banner"}
+      sx={{
+        width: "100%",
+        position: "relative",
+        maxWidth: "1352px",
+        margin: "auto",
+        overflow: "hidden",
+        my: 4,
       }}
     >
       {/* <Box sx={{ position: "absolute" }}>
@@ -88,12 +77,12 @@ const BannerComponent = () => {
               }}
               slidesPerView={1}
               spaceBetween={0}
-              pagination={{
-                el: ".swiper-pagination",
-                clickable: true,
-              }}
+              // pagination={{
+              //   el: ".swiper-pagination",
+              //   clickable: true,
+              // }}
               scrollbar={{ draggable: true }}
-              modules={[Navigation, Autoplay, Pagination]}
+              modules={[Navigation, Autoplay]}
               loop={true}
               navigation
               mousewheel={true}
@@ -114,15 +103,15 @@ const BannerComponent = () => {
                   >
                     <Box
                       sx={{
-                        pl: 10,
+                        pl: { sm: 1, md: 10 },
                         py: 1,
                         height: "100%",
                         width: "60%",
                         display: "flex",
                         flexDirection: "column",
                         gap: "20px",
-                        alignItems: "flex-start",
-                        justifyContent: "flex-start",
+                        alignItems: { sm: "center", md: "flex-start" },
+                        justifyContent: { sm: "center", md: "flex-start" },
                       }}
                     >
                       <Typography

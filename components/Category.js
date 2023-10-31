@@ -82,11 +82,11 @@ const Category = () => {
             <Swiper
               slidesPerView={isMobile ? 1 : isTablet ? 3 : 5}
               spaceBetween={40}
-              freeMode={isMobile || isTablet ? false : true}
-              pagination={{
-                el: ".swiper-pagination",
-                clickable: true,
-              }}
+              freeMode={isMobile ? false : true}
+              // pagination={{
+              //   el: ".swiper-pagination",
+              //   clickable: true,
+              // }}
               scrollbar={{ draggable: true }}
               modules={[Navigation, Autoplay, FreeMode]}
               loop={true}

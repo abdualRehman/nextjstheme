@@ -252,12 +252,12 @@ const ProductSliderComponent = ({ category }) => {
               slidesPerView={isMobile ? 1 : isTablet ? 2 : 3}
               spaceBetween={0}
               freeMode={false}
-              pagination={{
-                el: ".swiper-pagination",
-                clickable: true,
-              }}
+              // pagination={{
+              //   el: ".swiper-pagination",
+              //   clickable: true,
+              // }}
               scrollbar={{ draggable: true }}
-              modules={[Navigation, Autoplay, Pagination, FreeMode]}
+              modules={[Navigation, Autoplay, FreeMode]}
               loop={true}
               className="categoriesSwiper1"
               navigation
