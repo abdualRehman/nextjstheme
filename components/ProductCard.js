@@ -30,7 +30,6 @@ const ProductCard = ({ product }) => {
   // isMobile
   const isMobile = useMediaQuery("(max-width:600px)");
 
-
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
 
@@ -67,84 +66,79 @@ const ProductCard = ({ product }) => {
           borderRadius: "10px",
           overflow: "hidden",
           "&:hover": {
-            backgroundColor: isMobile ? "red" : "transparent",
+            backgroundColor: "transparent",
           },
         }}
       >
-        <CardActionArea
-          sx={{
-            textAlign: "center",
-            "&:hover": { backgroundColor: "transparent" },
-          }}
-        >
-          <CardMedia
+        <Link href={`/products/${product.id}`}>
+          <CardActionArea
             sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "230px",
-              height: "250px",
-              borderRadius: "10px",
-              backgroundColor: "#D9D9D9",
-              margin: "auto",
+              textAlign: "center",
+              "&:hover": { backgroundColor: "transparent" },
             }}
           >
-            <Image
-              src={product.image}
-              width="130px"
-              height="150px"
-            />
-          </CardMedia>
-          <CardContent sx={{ textAlign: "left", mb: 0 }}>
-            <Typography variant="body2">
-              {product.category}{" "}
-              <span
-                style={{
-                  fontWeight: "500",
-                  fontSize: "11px",
-                  padding: "5px 5px",
-                  marginLeft: "5px",
-                  borderRadius: "5px",
-                  backgroundColor:
-                    state?.config?.primaryColor || "#1BFBB5",
-                }}
-              >
-                20% OFF
-              </span>
-            </Typography>
-            <Typography
-              variant="body1"
-              component="h2"
-              fontWeight={600}
-              mt="5px"
-              mb="10px"
-            >
-              {product.title.slice(0, 25)}
-            </Typography>
-            <Typography
-              variant="body2"
+            <CardMedia
               sx={{
-                fontWeight: "600",
-                fontSize: "15px",
-                color: state?.config?.primaryColor || "#0A6BF8",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "230px",
+                height: "250px",
+                borderRadius: "10px",
+                backgroundColor: "#D9D9D9",
+                margin: "auto",
               }}
             >
-              {product.price}
-            </Typography>
-          </CardContent>
+              <Image src={product.image} width="130px" height="150px" />
+            </CardMedia>
+            <CardContent sx={{ textAlign: "left", mb: 0 }}>
+              <Typography variant="body2">
+                {product.category}{" "}
+                <span
+                  style={{
+                    fontWeight: "500",
+                    fontSize: "11px",
+                    padding: "5px 5px",
+                    marginLeft: "5px",
+                    borderRadius: "5px",
+                    backgroundColor: state?.config?.primaryColor || "#1BFBB5",
+                  }}
+                >
+                  20% OFF
+                </span>
+              </Typography>
+              <Typography
+                variant="body1"
+                component="h2"
+                fontWeight={600}
+                mt="5px"
+                mb="10px"
+              >
+                {product.title.slice(0, 25)}
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  fontWeight: "600",
+                  fontSize: "15px",
+                  color: state?.config?.primaryColor || "#0A6BF8",
+                }}
+              >
+                {product.price}.00 KWD
+              </Typography>
+            </CardContent>
 
-          <CardActions
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              mb: "10px",
-              py: 0,
-              width: "100%",
-            }}
-          >
-            {hasWindow &&
-              QuantityCount(state, product.id) === 1 && (
+            <CardActions
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                mb: "10px",
+                py: 0,
+                width: "100%",
+              }}
+            >
+              {hasWindow && QuantityCount(state, product.id) === 1 && (
                 <Box
                   sx={{ cursor: "pointer" }}
                   onClick={() => removeHandler(product)}
@@ -159,52 +153,62 @@ const ProductCard = ({ product }) => {
                 </Box>
               )}
 
-            {hasWindow && QuantityCount(state, product.id) > 1 && (
-              <Box
-                sx={{ cursor: "pointer" }}
-                onClick={() => minusHandler(product)}
-              >
-                <IndeterminateCheckBoxIcon
-                  sx={{
-                    fontSize: "35px",
-                    color: "#1BFBB5",
-                    "&:hover": { color: "#01579b" },
-                  }}
-                />
-              </Box>
-            )}
+              {hasWindow && QuantityCount(state, product.id) > 1 && (
+                <Box
+                  sx={{ cursor: "pointer" }}
+                  onClick={() => minusHandler(product)}
+                >
+                  <IndeterminateCheckBoxIcon
+                    sx={{
+                      fontSize: "35px",
+                      color: "#1BFBB5",
+                      "&:hover": { color: "#01579b" },
+                    }}
+                  />
+                </Box>
+              )}
 
-            {hasWindow && QuantityCount(state, product.id) > 0 && (
-              <Typography variant="h6" px="10px" fontWeight={600}>
-                {QuantityCount(state, product.id)}
-              </Typography>
-            )}
+              {hasWindow && QuantityCount(state, product.id) > 0 && (
+                <Typography variant="h6" px="10px" fontWeight={600}>
+                  {QuantityCount(state, product.id)}
+                </Typography>
+              )}
 
-            {hasWindow && IsInCart(state, product.id) ? (
-              <Box
-                sx={{ cursor: "pointer" }}
-                onClick={() => plusHandler(product)}
-              >
-                <AddBoxIcon
+              {hasWindow && IsInCart(state, product.id) ? (
+                <Box
+                  sx={{ cursor: "pointer" }}
+                  onClick={() => plusHandler(product)}
+                >
+                  <AddBoxIcon
+                    sx={{
+                      fontSize: "35px",
+                      color: "#1BFBB5",
+                      "&:hover": { color: "#01579b" },
+                    }}
+                  />
+                </Box>
+              ) : (
+                <Button
+                  variant="contained"
                   sx={{
-                    fontSize: "35px",
-                    color: "#1BFBB5",
-                    "&:hover": { color: "#01579b" },
+                    width: "100%",
+                    borderRadius: "11px",
+                    backgroundColor: "transparent",
+                    border: "1px solid #1BFBB5",
+                    boxShadow: "none",
+                    "&:hover": {
+                      backgroundColor: "#1BFBB5",
+                      color: "white",
+                    },
                   }}
-                />
-              </Box>
-            ) : (
-              <Button
-                variant="contained"
-                sx={{ width: "100%", backgroundColor: "#1BFBB5" }}
-                color="info"
-                onClick={() => addHandler(product)}
-              >
-                Add to cart
-              </Button>
-            )}
-          </CardActions>
-        </CardActionArea>
+                  onClick={() => addHandler(product)}
+                >
+                  Add to cart
+                </Button>
+              )}
+            </CardActions>
+          </CardActionArea>
+        </Link>
       </Card>
       {/* <Card
         sx={{

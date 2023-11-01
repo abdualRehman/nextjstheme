@@ -53,8 +53,7 @@ import IndeterminateCheckBoxIcon from "@mui/icons-material/IndeterminateCheckBox
 import DeleteIcon from "@mui/icons-material/Delete";
 import { content } from "../dummy-data/data";
 
-
-const ProductSliderComponent = ({ category }) => {
+const ProductSliderComponent = ({ category, hideDropdown }) => {
   const [value, setValue] = useState(category);
   const isTablet = useMediaQuery("(max-width:900px)");
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -120,79 +119,81 @@ const ProductSliderComponent = ({ category }) => {
         position={"inherit"}
         px={`${isTablet ? "10px" : "5px"}`}
       >
-        <Box
-          sx={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "row",
-            gap: "30px",
-            alignItems: "center",
-          }}
-        >
-          <FormControl
+        {!hideDropdown && (
+          <Box
             sx={{
-              m: 1,
-              minWidth: 140,
-              border: "none",
-              color: "black",
-              boxShadow: "none",
-              fontWeight: 400,
-              textAlign: "center",
+              width: "100%",
+              display: "flex",
+              flexDirection: "row",
+              gap: "30px",
+              alignItems: "center",
             }}
-            size="small"
           >
-            <Select
-              variant="outlined"
-              labelId="Category"
-              id="Category"
-              label="All"
+            <FormControl
               sx={{
-                backgroundColor: "#1BFBB5",
+                m: 1,
+                minWidth: 140,
                 border: "none",
                 color: "black",
                 boxShadow: "none",
-                outline: "none",
-                textAlign: "center",
-                ".MuiOutlinedInput-notchedOutline": { border: 0 },
                 fontWeight: 400,
+                textAlign: "center",
               }}
-              value={value}
-              onChange={(event) => setValue(event.target.value)}
+              size="small"
             >
-              <MenuItem value="All">All</MenuItem>
-              <MenuItem value="Mobiles">Mobiles</MenuItem>
-              <MenuItem value="Headsets">Headsets</MenuItem>
-            </Select>
-          </FormControl>
-          {!isMobile && (
-            <>
-              <Typography
-                variant="text"
-                component="h3"
-                sx={{ cursor: "pointer", fontSize: "16px" }}
-                fontWeight={400}
+              <Select
+                variant="outlined"
+                labelId="Category"
+                id="Category"
+                label="All"
+                sx={{
+                  backgroundColor: "#1BFBB5",
+                  border: "none",
+                  color: "black",
+                  boxShadow: "none",
+                  outline: "none",
+                  textAlign: "center",
+                  ".MuiOutlinedInput-notchedOutline": { border: 0 },
+                  fontWeight: 400,
+                }}
+                value={value}
+                onChange={(event) => setValue(event.target.value)}
               >
-                Latest
-              </Typography>
-              <Typography
-                variant="text"
-                component="h3"
-                sx={{ cursor: "pointer", fontSize: "16px" }}
-                fontWeight={400}
-              >
-                Featured
-              </Typography>
-              <Typography
-                variant="text"
-                component="h3"
-                sx={{ cursor: "pointer", fontSize: "16px" }}
-                fontWeight={400}
-              >
-                Best Sellers
-              </Typography>
-            </>
-          )}
-        </Box>
+                <MenuItem value="All">All</MenuItem>
+                <MenuItem value="Mobiles">Mobiles</MenuItem>
+                <MenuItem value="Headsets">Headsets</MenuItem>
+              </Select>
+            </FormControl>
+            {!isMobile && (
+              <>
+                <Typography
+                  variant="text"
+                  component="h3"
+                  sx={{ cursor: "pointer", fontSize: "16px" }}
+                  fontWeight={400}
+                >
+                  Latest
+                </Typography>
+                <Typography
+                  variant="text"
+                  component="h3"
+                  sx={{ cursor: "pointer", fontSize: "16px" }}
+                  fontWeight={400}
+                >
+                  Featured
+                </Typography>
+                <Typography
+                  variant="text"
+                  component="h3"
+                  sx={{ cursor: "pointer", fontSize: "16px" }}
+                  fontWeight={400}
+                >
+                  Best Sellers
+                </Typography>
+              </>
+            )}
+          </Box>
+        )}
 
         {products.length > 0 && (
           <Box
@@ -222,9 +223,7 @@ const ProductSliderComponent = ({ category }) => {
             >
               {products.map((product) => (
                 <SwiperSlide key={product.id} sx={{ textAlign: "center" }}>
-
                   <ProductCard key={product.id} product={product} />
-
 
                   {/* <Card
                     sx={{
@@ -373,10 +372,6 @@ const ProductSliderComponent = ({ category }) => {
                       </CardActions>
                     </CardActionArea>
                   </Card> */}
-
-
-
-
                 </SwiperSlide>
               ))}
             </Swiper>

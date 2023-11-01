@@ -172,12 +172,7 @@ const Sidebar = ({ products, setDynamicState }) => {
               gap="15px"
               flexDirection="column"
             >
-              <Typography
-                variant="text"
-                component="h3"
-                fontWeight={600}
-                sx={{ ml: "-10px" }}
-              >
+              <Typography variant="text" component="h3" fontWeight={600}>
                 Sorting
               </Typography>
 
@@ -201,9 +196,9 @@ const Sidebar = ({ products, setDynamicState }) => {
                         width: "100%",
                         display: "flex",
                         justifyContent: "space-between",
-                        '& .css-fwndib-MuiTypography-root': {
-                          fontSize: "14px"
-                        }
+                        "& .css-fwndib-MuiTypography-root": {
+                          fontSize: "14px",
+                        },
                       }}
                     />
                   );
@@ -227,12 +222,7 @@ const Sidebar = ({ products, setDynamicState }) => {
               gap="15px"
               flexDirection="column"
             >
-              <Typography
-                variant="text"
-                component="h3"
-                fontWeight={600}
-                sx={{ ml: "-10px" }}
-              >
+              <Typography variant="text" component="h3" fontWeight={600}>
                 Delivery
               </Typography>
               <RadioGroup
@@ -253,9 +243,9 @@ const Sidebar = ({ products, setDynamicState }) => {
                       margin: "0px",
                       display: "flex",
                       justifyContent: "space-between",
-                      '& .css-fwndib-MuiTypography-root': {
-                        fontSize: "14px"
-                      }
+                      "& .css-fwndib-MuiTypography-root": {
+                        fontSize: "14px",
+                      },
                     }}
                   />
                 ))}
@@ -278,12 +268,7 @@ const Sidebar = ({ products, setDynamicState }) => {
               gap="15px"
               flexDirection="column"
             >
-              <Typography
-                variant="text"
-                component="h3"
-                fontWeight={600}
-                sx={{ ml: "-10px" }}
-              >
+              <Typography variant="text" component="h3" fontWeight={600}>
                 Price Range
               </Typography>
               <RadioGroup
@@ -304,9 +289,9 @@ const Sidebar = ({ products, setDynamicState }) => {
                       margin: "0px",
                       display: "flex",
                       justifyContent: "space-between",
-                      '& .css-fwndib-MuiTypography-root': {
-                        fontSize: "14px"
-                      }
+                      "& .css-fwndib-MuiTypography-root": {
+                        fontSize: "14px",
+                      },
                     }}
                   />
                 ))}
@@ -329,12 +314,7 @@ const Sidebar = ({ products, setDynamicState }) => {
               gap="15px"
               flexDirection="column"
             >
-              <Typography
-                variant="text"
-                component="h3"
-                fontWeight={600}
-                sx={{ ml: "-10px" }}
-              >
+              <Typography variant="text" component="h3" fontWeight={600}>
                 Brands
               </Typography>
               <RadioGroup
@@ -355,9 +335,9 @@ const Sidebar = ({ products, setDynamicState }) => {
                       margin: "0px",
                       display: "flex",
                       justifyContent: "space-between",
-                      '& .css-fwndib-MuiTypography-root': {
-                        fontSize: "14px"
-                      }
+                      "& .css-fwndib-MuiTypography-root": {
+                        fontSize: "14px",
+                      },
                     }}
                   />
                 ))}
@@ -368,11 +348,12 @@ const Sidebar = ({ products, setDynamicState }) => {
                   backgroundColor: "#2F2F2F",
                   height: "2px",
                   width: "100%",
+                  mb: 2,
                 }}
               />
             </Box>
           )}
-          <Box
+          {/* <Box
             display="flex"
             alignItems="flex-start"
             justifyContent="flex-start"
@@ -380,12 +361,7 @@ const Sidebar = ({ products, setDynamicState }) => {
             flexDirection="column"
             minHeight="300px"
           >
-            <Typography
-              variant="text"
-              component="h3"
-              fontWeight={600}
-              sx={{ ml: "-10px" }}
-            >
+            <Typography variant="text" component="h3" fontWeight={600}>
               Category
             </Typography>
 
@@ -402,9 +378,11 @@ const Sidebar = ({ products, setDynamicState }) => {
                 labelPlacement={"start"}
                 label="All"
                 sx={{
-                  display: "flex", justifyContent: "space-between", '& .css-fwndib-MuiTypography-root': {
-                    fontSize: "14px"
-                  }
+                  display: "flex",
+                  justifyContent: "space-between",
+                  "& .css-fwndib-MuiTypography-root": {
+                    fontSize: "14px",
+                  },
                 }}
               />
               <FormControlLabel
@@ -412,9 +390,11 @@ const Sidebar = ({ products, setDynamicState }) => {
                 labelPlacement={"start"}
                 control={<Radio />}
                 sx={{
-                  display: "flex", justifyContent: "space-between", '& .css-fwndib-MuiTypography-root': {
-                    fontSize: "14px"
-                  }
+                  display: "flex",
+                  justifyContent: "space-between",
+                  "& .css-fwndib-MuiTypography-root": {
+                    fontSize: "14px",
+                  },
                 }}
                 label="Men's"
               />
@@ -423,9 +403,11 @@ const Sidebar = ({ products, setDynamicState }) => {
                 labelPlacement={"start"}
                 control={<Radio />}
                 sx={{
-                  display: "flex", justifyContent: "space-between", '& .css-fwndib-MuiTypography-root': {
-                    fontSize: "14px"
-                  }
+                  display: "flex",
+                  justifyContent: "space-between",
+                  "& .css-fwndib-MuiTypography-root": {
+                    fontSize: "14px",
+                  },
                 }}
                 label="Women's"
               />
@@ -434,9 +416,11 @@ const Sidebar = ({ products, setDynamicState }) => {
                 labelPlacement={"start"}
                 control={<Radio />}
                 sx={{
-                  display: "flex", justifyContent: "space-between", '& .css-fwndib-MuiTypography-root': {
-                    fontSize: "14px"
-                  }
+                  display: "flex",
+                  justifyContent: "space-between",
+                  "& .css-fwndib-MuiTypography-root": {
+                    fontSize: "14px",
+                  },
                 }}
                 label="Jewelery"
               />
@@ -445,9 +429,11 @@ const Sidebar = ({ products, setDynamicState }) => {
                 labelPlacement={"start"}
                 control={<Radio />}
                 sx={{
-                  display: "flex", justifyContent: "space-between", '& .css-fwndib-MuiTypography-root': {
-                    fontSize: "14px"
-                  }
+                  display: "flex",
+                  justifyContent: "space-between",
+                  "& .css-fwndib-MuiTypography-root": {
+                    fontSize: "14px",
+                  },
                 }}
                 label="Electronics"
               />
@@ -456,7 +442,7 @@ const Sidebar = ({ products, setDynamicState }) => {
               orientation="horizontal"
               sx={{ backgroundColor: "#2F2F2F", height: "2px", width: "100%" }}
             />
-          </Box>
+          </Box> */}
         </Box>
       )}
     </Box>
