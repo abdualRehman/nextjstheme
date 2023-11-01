@@ -771,8 +771,8 @@ const ProductDetail = ({ product }) => {
                 color={"#2F2F2F"}
                 fontWeight={500}
               >
-                I'm extremely happy with both the product and the quality service
-                they have provided me & they really do save me money. I'd highly
+                Im extremely happy with both the product and the quality service
+                they have provided me & they really do save me money. Id highly
                 recommend this to each and everyone. We have a canine show winning
                 female puppy.
               </Typography>
@@ -826,8 +826,8 @@ const ProductDetail = ({ product }) => {
                 color={"#2F2F2F"}
                 fontWeight={500}
               >
-                I'm extremely happy with both the product and the quality service
-                they have provided me & they really do save me money. I'd highly
+                Im extremely happy with both the product and the quality service
+                they have provided me & they really do save me money. Id highly
                 recommend this to pet owners. We have a canine show winning female
                 puppy.
               </Typography>
@@ -881,8 +881,8 @@ const ProductDetail = ({ product }) => {
                 color={"#2F2F2F"}
                 fontWeight={500}
               >
-                I'm extremely happy with both the product and the quality service
-                they have provided me & they really do save me money. I'd highly
+                Im extremely happy with both the product and the quality service
+                they have provided me & they really do save me money. Id highly
                 recommend this to each and everyone. We have a canine show winning
                 female puppy.
               </Typography>
@@ -936,8 +936,8 @@ const ProductDetail = ({ product }) => {
                 color={"#2F2F2F"}
                 fontWeight={500}
               >
-                I'm extremely happy with both the product and the quality service
-                they have provided me & they really do save me money. I'd highly
+                Im extremely happy with both the product and the quality service
+                they have provided me & they really do save me money. Id highly
                 recommend this to each and everyone. We have a canine show winning
                 female puppy.
               </Typography>
