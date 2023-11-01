@@ -106,7 +106,7 @@ const ProductDetail = ({ product }) => {
           py="10px"
           mb={"30px"}
         >
-          {/* product Image */}
+          {/* product Image v2 */}
           <Box
             width={isTablet ? "80%" : "50%"}
             textAlign={isTablet ? "center" : "end"}
